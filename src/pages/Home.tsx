@@ -23,7 +23,7 @@ function Home() {
   }
 
   async function fetchRecipesFromApi() {
-    const res = await fetch(`https://api.spoonacular.com/food/videos/search?query=${searchedTerm}&apiKey=86d904e1dc86425bbdffaca910324ee7&number=14`)
+    const res = await fetch(`https://api.spoonacular.com/food/videos/search?query=${searchedTerm}&apiKey=${process.env.REACT_APP_API_KEY}&number=14`)
     const data = await res.json()
     
     setRecipesArray(data.videos)
