@@ -2,6 +2,8 @@ import { RecipeType } from "../constants"
 import StyledRecipes from "../styles/StyledRecipes.styled"
 import Recipe from "./Recipe"
 import { nanoid } from "nanoid"
+import { motion } from "framer-motion"
+import { fade } from "../utils/motion"
 
 type Props = {
   title: string,
@@ -17,13 +19,19 @@ function Recipes({ title, recipesArray }: Props) {
   />)
 
   return (
-    <StyledRecipes>
-      <h1 className="title">{title}</h1>
+    <motion.div
+      variants={fade}
+      initial="hidden"
+      whileInView="show"
+    >
+      <StyledRecipes>
+        <h1 className="title">{title}</h1>
 
-      <div className="recipes">
-        {recipeElements}
-      </div>
-    </StyledRecipes>
+        <div className="recipes">
+          {recipeElements}
+        </div>
+      </StyledRecipes>
+    </motion.div>
   )
 }
 
