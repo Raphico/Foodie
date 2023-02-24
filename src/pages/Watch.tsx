@@ -20,7 +20,6 @@ function Watch() {
           url={`https://www.youtube.com/watch?v=${youTubeId}`}
           width="100%"
           height="20em"
-          light="true"
           controls
         />
       </StyledWatch>

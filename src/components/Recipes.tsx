@@ -16,7 +16,7 @@ function Recipes({ title, recipesArray }: Props) {
     shortTitle={recipe.shortTitle}
     thumbnail={recipe.thumbnail}
     youTubeId={recipe.youTubeId}
-  />)
+  />) || "Error"
 
   return (
     <motion.div
